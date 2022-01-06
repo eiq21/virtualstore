@@ -1,0 +1,10 @@
+﻿
+> add-migration InitialCreate -p Catalog.Persistence -c CatalogDbContext -o Migrations -s Catalog.API
+> update-database -p Catalog.Persistence -s Catalog.API
+
+
+Commands
+> dotnet-ef migrations add Migration Name — add a new migration
+> dotnet-ef migrations remove — remove the last migration
+> dotnet-ef database update — update the database to the latest migration
+> dotnet-ef migrations script — generate the sql script for the migration
