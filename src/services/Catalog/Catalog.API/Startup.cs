@@ -1,3 +1,4 @@
+using Catalog.Application;
 using Catalog.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -21,13 +22,15 @@ namespace Catalog.API
         public void ConfigureServices(IServiceCollection services)
         {
 
-            PersistenceServiceRegistration.AddPersistenceServices(services, Configuration);
+            services.AddPersistenceServices(Configuration);
+            services.AddApplicationServices();
 
             services.AddControllers();
-            
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Catalog.API", Version = "v1" });
+
             });
         }
 

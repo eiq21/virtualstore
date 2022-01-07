@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
-using Catalog.Application.Features.Brands;
+using Catalog.Application.Features.Brands.Commands.CreateBrand;
+using Catalog.Application.Features.Brands.Queries.GetBrands;
 using Catalog.Domain.Entities;
 
 namespace Catalog.Application.Features.Profiles
@@ -8,7 +9,8 @@ namespace Catalog.Application.Features.Profiles
     {
         public MappingProfile()
         {
-            CreateMap<Brand, BrandListViewModel>().ReverseMap();
+            CreateMap<Brand, CreateBrandViewModel>();
+            CreateMap<Brand, BrandsViewModel>();
         }
     }
 }
